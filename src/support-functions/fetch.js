@@ -11,9 +11,9 @@ import axios from 'axios';
         });
     });
   };
-  export const fetchDataGet = (url) => {
+  export const fetchDataGet = (url, params = {}) => {
     return new Promise((resolve, reject) => {
-      return axios.get( url)
+      return axios.get( url, params)
         .then((response) => (response.status !== 200 ? reject(response) : response))
         .then((response) => response.data)
         .then((response) => resolve(response))

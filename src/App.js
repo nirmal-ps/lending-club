@@ -3,7 +3,13 @@ import { Route, Redirect } from 'react-router-dom'
 // components
 import LoginForm from './components/sign-up'
 import { fetchDataGet } from './support-functions/fetch'
-import Home from './components/home'
+import LayOutWrapper from './components/layout'
+import LoanTable from './components/loan-table'
+import MemberDetails from './components/member-details'
+import Topten from './components/top-ten'
+import ChartWrapper from './components/bar-chart'
+
+
 class App extends Component {
   constructor() {
     super()
@@ -61,13 +67,43 @@ class App extends Component {
         />
         <Route
           exact path="/"
-          component={Home} />
+          render={() =>
+            <LayOutWrapper
+              updateUser={this.updateUser}
+              render={() => <LoanTable/>}
+            />}
+        />
         <Route
           path="/login"
           render={() =>
             <LoginForm
               updateUser={this.updateUser}
+
             />}
+        />
+        <Route
+          path="/memberDetails/:id"
+          render={() =>
+            <LayOutWrapper
+              updateUser={this.updateUser}
+              render={() => <MemberDetails/>}
+            />}
+        />
+        <Route
+          path="/topTen"
+          render={() =>
+            <LayOutWrapper
+            updateUser={this.updateUser}
+            render={() => <Topten/>}
+          />}
+        />
+        <Route
+          path="/charts"
+          render={() =>
+            <LayOutWrapper
+            updateUser={this.updateUser}
+            render={() => <ChartWrapper/>}
+          />}
         />
       </div>
     );

@@ -2,14 +2,14 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import './sign-up.css';
 import {  fetchDataPost } from '../support-functions/fetch';
-import { omit } from 'lodash-es';
+
 
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        fetchDataPost('/api/user/login', omit(values, ['remember']))
+        fetchDataPost('/api/user/login', values)
         .then( data => {
             this.props.updateUser({
                 loggedIn: true,

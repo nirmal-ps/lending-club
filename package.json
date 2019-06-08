@@ -8,6 +8,8 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-mongo": "^2.0.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "express": "^4.17.1",
     "express-session": "^1.16.1",
     "http-proxy-middleware": "^0.19.1",
@@ -19,7 +21,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-test-renderer": "^16.8.6",
+    "recharts": "^1.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
